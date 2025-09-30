@@ -8,3 +8,4 @@ def pal(text):
     else:
         print("not palindrome")
 pal("malayalam")
+pal("python")
