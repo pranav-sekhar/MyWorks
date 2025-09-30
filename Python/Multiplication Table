@@ -1,0 +1,8 @@
+def mult(a,r):
+    for i in range(1,r+1):
+        m=a*i
+        print(a,"*",i,"-",m)
+mult(5,10)
+mult(8,10)
+mult(15,10)
+mult(20,10)
