@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>forms</title>
+        <style>
+            th{text-align:left}
+            label{color: rgb(16, 101, 141);}
+            h1{color: rgb(12, 99, 162);background-color:rgb(33, 212, 212);width: 270px;}
+        </style>
+    </head>
+    <body bgcolor="lightblue">
+        <h1>Registration Form</h1>
+        <form onsubmit="return details()">
+        <table cellpadding="10">
+            <tr>
+                <th><label>FIRST NAME</label></th>
+                <td><input type="text" id="fn"></td>
+            </tr>
+            <tr>
+                <th><label>LAST NAME</label></th>
+                <td><input type="text" id="ln"></td>
+            </tr>
+            <tr>
+                <th><label>DATE OF BIRTH</label></th>
+                <td><input type="date" id="d"></td>
+            </tr>
+            <tr>
+                <th><label>EMAIL ID</label></th>
+                <td><input type="text" id="e"></td>
+            </tr>
+            <tr>
+                <th><label>MOBILE NUMBER</label></th>
+                <td><input type="tel" id="n"></td>
+            </tr>
+            <tr>
+                <th><label>GENDER</label></th>
+                <td>Male<input type="radio" id="m" name="r" value="M">
+                    Female<input type="radio" id="f" name="r" value="F"></td>
+            </tr>
+            <tr>
+                <th><label>ADDRESS</label></th>
+                <td><textarea id="a" cols="30" rows="4"></textarea></td>
+            </tr>
+            <tr>
+                <th><label>CITY</label></th>
+                <td><input type="text" id="ci"></td>
+            </tr>
+            <tr>
+                <th><label>PINCODE</label></th>
+                <td><input type="number" id="p"></td>
+            </tr>
+            <tr>
+                <th><label>STATE</label></th>
+                <td><input type="text" id="s"></td>
+            </tr>
+            <tr>
+                <th><label>COUNTRY</label></th>
+                <td><select id="co">
+                <option value="">- - - Select - - -</option>
+                <option value="india">India</option>
+                <option value="USA">USA</option>
+                <option value="england">England</option>
+            </select></td>
+            </tr>
+            <tr>
+                <th><label>COURSE <br> APPLIED FOR</label></th>
+                <td>Php<input type="radio" id="php" name="n" value="php">
+                Python<input type="radio" id="py" name="n" value="python">
+                Java<input type="radio" id="java" name="n" value="java">
+                Digital Marketing<input type="radio" id="dm" name="n" value="dm"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit">
+                <input type="reset"></td>
+            </tr>
+        </table>
+        </form>
+        <script>
+            function details(){
+                var fname=document.getElementById("fn").value.trim() 
+                var lname=document.getElementById("ln").value.trim()
+                var dob=document.getElementById("d").value
+                var email=document.getElementById("e").value
+                var mobile=document.getElementById("n").value
+                var male=document.getElementById("m").checked
+                var female=document.getElementById("f").checked
+                var address=document.getElementById("a").value
+                var city=document.getElementById("ci").value
+                var pin=document.getElementById("p").value
+                var state=document.getElementById("s").value
+                var country=document.getElementById("co").value
+                var php=document.getElementById("php").checked
+                var py=document.getElementById("py").checked
+                var java=document.getElementById("java").checked
+                var dm=document.getElementById("dm").checked
+
+                if(fname===""){
+                    alert("Please enter your first name")
+                    return false
+                }
+                if(dob===""){
+                    alert("Please select date of birth")
+                    return false
+                }
+                var pattern=/^[^ ]+@[^ ]+\.[a-z]{2,3}$/
+                if(email==="" || !email.match(pattern)){
+                    alert("Please enter a valid email")
+                    return false
+                }
+                let mob=/^[0-9]{10}$/
+                if(mobile.length!=10 || !mob){
+                    alert("Please enter a valid mobile no")
+                    return false
+                }
+                if(!male && !female){
+                    alert("Please select a gender")
+                    return false
+                }
+                if(address===""){
+                    alert("Please enter your address")
+                    return false
+                }
+                if(city===""){
+                    alert("Please enter your city")
+                    return false
+                }
+                pc=/^[0-9]{6}$/
+                if(pin.length!=6 || !pc){
+                    alert("Please enter a valid pincode")
+                    return false
+                }
+                if(state===""){
+                    alert("Please enter your state")
+                    return false
+                }
+                if(country===""){
+                    alert("Please select a country")
+                    return false
+                }
+                if(!php && !py && !java && !dm){
+                    alert("Please select the course applied for")
+                    return false
+                }
+                return true
+            }           
+        </script>
+    </body>
+</html>
