@@ -1,0 +1,10 @@
+def pal(text):
+    rev=""
+    for i in text:
+        rev=i+rev
+    print(rev)
+    if rev==text:
+        print("palindrome")
+    else:
+        print("not palindrome")
+pal("malayalam")
