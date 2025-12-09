@@ -2,8 +2,8 @@ This repository contains my practice codes and learning exercises in multiple te
 
 - Python/ → Core Python programs
 - OOPS/   → Object-Oriented Programming examples
-- HTML/   - Lists
-          - Table
+- HTML/   → Lists
+          → Table
           → Student Registration Form
           → Responsive Tourism website home page with CSS styling
           → Registration form built with JavaScript form validation
