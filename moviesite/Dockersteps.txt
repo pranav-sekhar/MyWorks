@@ -1,0 +1,28 @@
+Steps to dockerize project
+Activate virtualenv,then inside proj folder run these commands.(no command to run in step 2,just create file n copy)
+
+STEP 1: pip freeze > requirements.txt
+
+STEP 2: Create a File named Dockerfile in the root folder and add this,
+# Use official Python image
+FROM python:3.11-slim
+# Set work directory
+WORKDIR /app
+# Prevent Python from writing .pyc files
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+# Install dependencies
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+# Copy project files
+COPY . .
+# Expose Django’s default port
+EXPOSE 8000
+# Run the app
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+
+Step 3: Build the Docker Image
+docker build -t django_docker_demo .
+
+Step 4: Run the Container
+docker run -p 8000:8000 django_docker_demo
