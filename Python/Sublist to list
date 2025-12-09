@@ -1,6 +1,0 @@
-n=[1,2],[3,4],[5]
-new=[]
-for i in n:
-    for j in i:
-        new.append(j)
-print(new)
