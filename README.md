@@ -1,4 +1,4 @@
-# Python, OOPS, HTML
+# Python, OOPS, HTML Practice Codes
 
 This repository contains my practice codes and learning exercises in multiple technologies
 
